@@ -1,0 +1,104 @@
+mat-sidenav-container{
+    font-family: 'Roboto Slab', serif !important;
+}
+mat-sidenav{
+    width:250px;
+    height:100vh;
+    
+}
+mat-sidenav-content{
+    height:100vh;
+    background-color:white;
+}
+mat-toolbar mat-icon{
+   font-size:2em;
+   width:1em;
+   height:1em;
+   color:black;
+}
+mat-toolbar{
+    background-color:white;
+    height:55px;
+    box-shadow:3px -5px 10px 1px #000000;
+    color:black;
+    font-family: 'Roboto Slab', serif !important;
+}
+/* main navigation styling */
+.menu{
+    height:39px;
+    display:none;
+}
+.menu:active{
+    color:black;
+}
+.emptyspace{
+    flex:1 1 auto
+}
+/* links styling*/
+.links{
+    margin-right:1em;
+    padding:0.3em;
+    text-decoration:none;
+    color:black;
+    font-size:1em;
+    font-weight: lighter;
+    transition: border 0.1s linear 0s;
+}
+.links:hover{
+    color:	#C71585;
+    border-bottom:2px solid black;
+}
+
+/*sidenav styling*/
+mat-sidenav div{
+    margin-top:25vh;
+    text-align:center;
+}
+mat-sidenav div ul{
+    list-style: none;
+    font-size:1.5em;
+    margin-right:10vw;
+}
+mat-sidenav div ul li{
+    margin-top:1em;
+}
+.sidenav-links{
+    text-decoration:none;
+    color:black;
+    transition: border 0.1s linear 0s;
+}
+.sidenav-links:hover{
+    color:	#C71585;
+    border-bottom:2px solid black; 
+}
+mat-sidenav a{
+    color:black;
+}
+mat-sidenav a:active{
+    color:black;
+}
+mat-sidenav a  mat-icon{
+    font-size:1.7em;
+    float:right;
+    margin-right:20px;
+    margin-top:15px;
+}
+/*responsive design*/
+@media(max-width:600px){
+    .menu{
+        display:block;
+    }
+    h3{
+       text-align:center;
+       width:85%
+    }
+    .links{
+        display:none;
+    }
+    .emptyspace{
+        flex:none;
+    }
+    mat-sidenav{
+        width:100%
+    }
+}

@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+    <mat-sidenav
+        #sidenav
+        position = "start"
+        mode = "over"
+        role = "navigation"
+        opened = "false"
+    >
+        <a href="#" (click)="sidenav.close()">
+            <mat-icon>close</mat-icon>
+        </a>
+        <div>
+            <ul>
+                <li><a href="#" class="sidenav-links">Home</a></li>
+                <li><a href="#" class="sidenav-links">Blog</a></li>
+                <li><a href="#" class="sidenav-links">About</a></li>
+                <li><a href="#" class="sidenav-links">Contact</a ></li>
+            </ul>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content
+        role = "main"
+    >
+        <mat-toolbar>
+            <a class="menu" href="#" (click) = "sidenav.open()" >
+                <mat-icon> menu </mat-icon>
+            </a>
+            <h3>Thelazydeveloper</h3>
+            <span class="emptyspace"></span>
+            <a href="#" class ="links">Home</a>
+            <a href="#" class ="links">Blog</a>
+            <a href="#" class ="links">About</a>
+            <a href="#" class ="links">Contact</a>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content
+    >
+</mat-sidenav-container>
