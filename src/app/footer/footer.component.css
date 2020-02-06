@@ -1,0 +1,11 @@
+mat-toolbar{
+    height:40px;
+    font-size:0.9em;
+    text-align:center;
+    background-color:white;
+    box-shadow:3px 4px 10px 1px #000000;
+}
+p{
+    width:100%;
+    text-align:center;
+}

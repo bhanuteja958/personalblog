@@ -4,10 +4,9 @@ mat-sidenav-container{
 mat-sidenav{
     width:250px;
     height:100vh;
-    
 }
 mat-sidenav-content{
-    height:100vh;
+    min-height:100%;
     background-color:white;
 }
 mat-toolbar mat-icon{
@@ -48,7 +47,10 @@ mat-toolbar{
     color:	#C71585;
     border-bottom:2px solid black;
 }
-
+#main{
+    overflow:auto;
+    padding-bottom:20px;
+}
 /*sidenav styling*/
 mat-sidenav div{
     margin-top:25vh;
