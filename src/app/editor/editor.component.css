@@ -1,0 +1,14 @@
+#editor{
+    width:70%;
+    margin:30px auto 0px auto;
+}
+button{
+    margin:20px auto 0px auto;
+    width:100px;
+}
+.width{
+    width:100%
+}
+.alert{
+    color : red
+}

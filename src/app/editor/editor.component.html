@@ -1,0 +1,25 @@
+<div id="editor">
+    <form (ngSubmit)="onSubmit(firstName,content)">   
+        <mat-form-field appearance = "fill" class="width">
+            <mat-label>Title</mat-label>
+            <input 
+                matInput
+                id="title" 
+                type="text" 
+                placeHolder="Enter the title of the blog post" 
+                required
+                ngModel
+                #firstName = "ngModel"
+                name="title"
+            >  
+        </mat-form-field>
+        <p class="alert" *ngIf="!firstName.control.valid && firstName.control.touched"> 
+            *Title Field is required.
+        </p>  
+        <ckeditor [editor]="editor" [config]="editorConfig" tagName="textarea" ngModel name="content" #content="ngModel" required></ckeditor>
+        <p class="alert" *ngIf="!content.control.valid && firstName.control.touched"> 
+            *Content Field is required.
+        </p>  
+        <button type="submit" mat-raised-button color="primary" [disabled]="!firstName.control.valid || !content.control.valid">Post</button>
+    </form>
+</div>
