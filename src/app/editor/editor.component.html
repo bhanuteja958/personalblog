@@ -1,12 +1,11 @@
 <div id="editor">
-    <form (ngSubmit)="onSubmit(firstName,content)">   
+    <form (ngSubmit)="onSubmit(firstName,content,category)">   
         <mat-form-field appearance = "fill" class="width">
             <mat-label>Title</mat-label>
             <input 
-                matInput
-                id="title" 
+                matInput 
                 type="text" 
-                placeHolder="Enter the title of the blog post" 
+                placeholder="Enter the title of the blog post" 
                 required
                 ngModel
                 #firstName = "ngModel"
@@ -16,10 +15,25 @@
         <p class="alert" *ngIf="!firstName.control.valid && firstName.control.touched"> 
             *Title Field is required.
         </p>  
+        <mat-form-field appearance = "fill" class="width">
+            <mat-label>Category</mat-label>
+            <input 
+                matInput 
+                type="text" 
+                placeholder="Category..." 
+                required
+                ngModel
+                #category = "ngModel"
+                name="category"
+            >  
+        </mat-form-field>
+        <p class="alert" *ngIf="!category.control.valid && category.control.touched"> 
+            *Category Field is required.
+        </p>
         <ckeditor [editor]="editor" [config]="editorConfig" tagName="textarea" ngModel name="content" #content="ngModel" required></ckeditor>
         <p class="alert" *ngIf="!content.control.valid && firstName.control.touched"> 
             *Content Field is required.
         </p>  
-        <button type="submit" mat-raised-button color="primary" [disabled]="!firstName.control.valid || !content.control.valid">Post</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!firstName.control.valid || !content.control.valid || !category.control.valid">Post</button>
     </form>
 </div>

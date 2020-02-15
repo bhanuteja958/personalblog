@@ -19,17 +19,19 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { FirebaseService } from './services/firebase.service';
+import { BlogComponent } from './blog/blog.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDividerModule } from '@angular/material/divider';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAavXZ8Syp-i4DqPcpP0YIzDHE0iSFdxv0",
-  authDomain: "personalblog-90c0b.firebaseapp.com",
-  databaseURL: "https://personalblog-90c0b.firebaseio.com",
-  projectId: "personalblog-90c0b",
-  storageBucket: "personalblog-90c0b.appspot.com",
-  messagingSenderId: "420496565841",
-  appId: "1:420496565841:web:405e3141b1d03943ccfa70",
-  measurementId: "G-X8MG2WXQX8"
+  apiKey: "AIzaSyAFPRXAiZkC92ok6d7_yRwVIGU0WH-OBcY",
+  authDomain: "personalblog-4dd65.firebaseapp.com",
+  databaseURL: "https://personalblog-4dd65.firebaseio.com",
+  projectId: "personalblog-4dd65",
+  storageBucket: "personalblog-4dd65.appspot.com",
+  messagingSenderId: "987671766762",
+  appId: "1:987671766762:web:8f97bdea405a1eafe31993"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -41,7 +43,8 @@ firebase.initializeApp(firebaseConfig);
     NavComponent,
     AboutComponent,
     FooterComponent,
-    EditorComponent
+    EditorComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +58,11 @@ firebase.initializeApp(firebaseConfig);
     CKEditorModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatDividerModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

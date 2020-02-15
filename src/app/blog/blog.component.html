@@ -1,0 +1,30 @@
+<div id="postView">
+    <mat-spinner *ngIf="blogPosts===undefined" ></mat-spinner>
+    <div *ngIf="blogPosts!==undefined">
+        <div *ngFor="let post of blogPosts">
+            <mat-card>
+                <mat-card-title>
+                    {{ post.data().title}}
+                </mat-card-title>
+                <mat-card-content>
+                    <p>
+                        {{ post.data().author }}<br> 
+                        {{ post.data().timestamp.toDate() | date}}
+                    </p>
+                    <p class="button">
+                        <button mat-raised-button color="primary">Read more</button>
+                    </p>  
+                </mat-card-content>
+            </mat-card>
+        </div>    
+        <div id="pagination">
+            <button mat-raised-button id="left" (click)="loadPrevious()" [disabled]="disabledPrevious">
+                <mat-icon>chevron_left</mat-icon>Previous  
+            </button>
+            <span></span>
+            <button mat-raised-button id="right" (click)="loadNext()" [disabled]="disabledNext">
+                Next<mat-icon>chevron_right</mat-icon>  
+            </button>
+        </div>
+    </div>   
+</div>

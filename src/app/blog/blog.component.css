@@ -1,0 +1,30 @@
+#postView{
+    width:60%;
+    margin:30px auto 0px auto;
+}
+#pagination{
+    margin-top:20px;
+}
+mat-card{
+    box-shadow:3px 1px 5px 0px rgba(0,0,0,0.5) !important;
+    margin-top:10px
+}
+#right{
+    float:right
+}
+#left{
+    float:left;
+}
+mat-spinner{
+    margin:auto;
+}
+mat-card-content{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+mat-card-content p{
+    padding:0px;
+}
+.button{
+    text-align:right;   
+}
