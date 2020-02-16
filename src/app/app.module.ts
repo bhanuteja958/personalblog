@@ -23,6 +23,8 @@ import { FirebaseService } from './services/firebase.service';
 import { BlogComponent } from './blog/blog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
+import { ViewpostComponent } from './viewpost/viewpost.component';
+import { HomeComponent } from './home/home.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAFPRXAiZkC92ok6d7_yRwVIGU0WH-OBcY",
@@ -44,7 +46,9 @@ firebase.initializeApp(firebaseConfig);
     AboutComponent,
     FooterComponent,
     EditorComponent,
-    BlogComponent
+    BlogComponent,
+    ViewpostComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

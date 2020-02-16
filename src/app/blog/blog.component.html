@@ -1,6 +1,7 @@
 <div id="postView">
     <mat-spinner *ngIf="blogPosts===undefined" ></mat-spinner>
     <div *ngIf="blogPosts!==undefined">
+        <h1>Blog Post's</h1>
         <div *ngFor="let post of blogPosts">
             <mat-card>
                 <mat-card-title>
@@ -12,7 +13,9 @@
                         {{ post.data().timestamp.toDate() | date}}
                     </p>
                     <p class="button">
-                        <button mat-raised-button color="primary">Read more</button>
+                        <button mat-raised-button color="primary" routerLink="/view/{{post.id}}">
+                            Read more
+                        </button>
                     </p>  
                 </mat-card-content>
             </mat-card>

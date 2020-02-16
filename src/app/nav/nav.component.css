@@ -27,6 +27,7 @@ mat-toolbar{
 .menu{
     height:39px;
     display:none;
+    cursor: pointer;
 }
 .menu:active{
     color:black;
@@ -64,6 +65,9 @@ mat-sidenav div ul{
 }
 mat-sidenav div ul li{
     margin-top:1em;
+}
+.close{
+    cursor:pointer
 }
 .sidenav-links{
     text-decoration:none;

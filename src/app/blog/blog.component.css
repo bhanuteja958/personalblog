@@ -28,3 +28,9 @@ mat-card-content p{
 .button{
     text-align:right;   
 }
+h1{
+    text-align:center;
+    background-color:black;
+    color:white;
+    padding:10px;
+}

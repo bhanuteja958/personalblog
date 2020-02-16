@@ -1,0 +1,53 @@
+<div class="postView">
+    <mat-spinner *ngIf="blogPost===undefined"></mat-spinner>
+    <div *ngIf="blogPost!==undefined">
+        <mat-card>
+            <mat-card-title>
+                {{ blogPost.title }}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{ blogPost.author }}<br>
+                {{ blogPost.timestamp.toDate() | date }}
+            </mat-card-subtitle>
+            <mat-card-content [innerHTML]="blogPost.content">
+            </mat-card-content>  
+        </mat-card>
+        <div class="formGroup" id="commentButton">
+            <button mat-raised-button color="primary" (click)="onClick()" *ngIf="!viewComments"> View All Comments</button>
+        </div>
+        <mat-card *ngIf="viewComments">
+            <mat-card-content>
+                <h1>Comments</h1>
+                <form (ngSubmit)="onSubmit(firstName,comment,myForm)" #myForm="ngForm"> 
+                    <div class="formGroup">
+                        <input type="text" placeholder="Enter your name..." #firstName="ngModel" ngModel  name="firstName" class="formControl" required>
+                    </div>
+                    <p *ngIf="!firstName.control.valid && firstName.control.touched" class="alert">*Name required</p>
+                    <div class="formGroup" >
+                        <textarea name="comment"  cols="30" rows="10" placeholder="Enter your comment.." class="formControl" required ngModel #comment="ngModel"></textarea >
+                    </div>
+                    <p class="alert" *ngIf="!comment.control.valid && comment.control.touched">*Comment required</p>
+                    <div class="formGroup">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="!firstName.control.valid || !comment.control.valid" (click)="onCommentAdded()">
+                            Post Comment
+                        </button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+        <div *ngFor="let comment of comments" class="comment" >
+            <mat-card *ngIf="viewComments">
+                <mat-card-title>
+                    {{comment.data().name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{comment.data().timestamp.toDate() | date}}
+                </mat-card-subtitle>
+                <mat-card-content>
+                    {{comment.data().comment}}
+                </mat-card-content>
+            </mat-card>
+          
+        </div>
+    </div>
+</div>

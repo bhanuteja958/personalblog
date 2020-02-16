@@ -6,15 +6,15 @@
         role = "navigation"
         opened = "false"
     >
-        <a href="#" (click)="sidenav.close()">
+        <a (click)="sidenav.close()" class="close">
             <mat-icon>close</mat-icon>
         </a>
         <div>
             <ul>
-                <li><a href="#" class="sidenav-links">Home</a></li>
-                <li><a href="#" class="sidenav-links">Blog</a></li>
-                <li><a href="#" class="sidenav-links">About</a></li>
-                <li><a href="#" class="sidenav-links">Contact</a ></li>
+                <li><a routerLink="/" class="sidenav-links" (click)="sidenav.close()">Home</a></li>
+                <li><a routerLink="/blog" class="sidenav-links" (click)="sidenav.close()">Blog</a></li>
+                <li><a routerLink="/about" class="sidenav-links" (click)="sidenav.close()">About</a></li>
+                <li><a routerLink="/contact" class="sidenav-links" (click)="sidenav.close()">Contact</a ></li>
             </ul>
         </div>
     </mat-sidenav>
@@ -22,19 +22,20 @@
         role = "main"
     >
         <mat-toolbar>
-            <a class="menu" href="#" (click) = "sidenav.open()" >
+            <a class="menu"  (click) = "sidenav.open()" >
                 <mat-icon> menu </mat-icon>
             </a>
             <h3>Thelazydeveloper</h3>
             <span class="emptyspace"></span>
-            <a href="#" class ="links">Home</a>
-            <a href="#" class ="links">Blog</a>
-            <a href="#" class ="links">About</a>
-            <a href="#" class ="links">Contact</a>
+            <a routerLink="/" class ="links">Home</a>
+            <a routerLink="/blog" class ="links">Blog</a>
+            <a routerLink="/about" class ="links">About</a>
+            <a routerLink="/contact"class ="links">Contact</a>
         </mat-toolbar>
-        <!-- <router-outlet></router-outlet> -->
         <div id="main">
-            <app-blog></app-blog>
+             <router-outlet></router-outlet>
+             <!-- <app-viewpost> </app-viewpost> -->
+            <!-- <app-editor></app-editor> -->
         </div>
         <app-footer></app-footer>
     </mat-sidenav-content>
