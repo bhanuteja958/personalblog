@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { ViewpostComponent } from './viewpost/viewpost.component';
+import { EditorComponent } from './editor/editor.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"about",component:AboutComponent},
   {path:"blog",component:BlogComponent},
   {path:"view/:postid",component:ViewpostComponent},
+  {path:"editor",component:EditorComponent},
   {path:"**",component:HomeComponent},
 ];
 

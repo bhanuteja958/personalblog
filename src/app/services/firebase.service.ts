@@ -68,4 +68,8 @@ export class FirebaseService {
     return this.db.collection('blogPosts').doc(docId).collection("comment").orderBy("timestamp","desc").get();
   }
 
+  //get recent uploads
+  getRecentUploads(){
+    return this.db.collection('blogPosts').orderBy("timestamp","desc").limit(3).get();
+  }
 }

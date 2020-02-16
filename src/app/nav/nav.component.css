@@ -46,12 +46,14 @@ mat-toolbar{
     transition: border 0.1s linear 0s;
 }
 .links:hover{
-    color:	#C71585;
     border-bottom:2px solid black;
 }
 #main{
     min-height:90vh;
     padding-bottom:50px;
+}
+h2{
+    font-family: 'Kaushan Script', cursive;
 }
 /*sidenav styling*/
 mat-sidenav div{
@@ -75,7 +77,6 @@ mat-sidenav div ul li{
     transition: border 0.1s linear 0s;
 }
 .sidenav-links:hover{
-    color:	#C71585;
     border-bottom:2px solid black; 
 }
 mat-sidenav a{
@@ -95,7 +96,7 @@ mat-sidenav a  mat-icon{
     .menu{
         display:block;
     }
-    h3{
+    h2{
        text-align:center;
        width:85%
     }

@@ -14,7 +14,7 @@
                 <li><a routerLink="/" class="sidenav-links" (click)="sidenav.close()">Home</a></li>
                 <li><a routerLink="/blog" class="sidenav-links" (click)="sidenav.close()">Blog</a></li>
                 <li><a routerLink="/about" class="sidenav-links" (click)="sidenav.close()">About</a></li>
-                <li><a routerLink="/contact" class="sidenav-links" (click)="sidenav.close()">Contact</a ></li>
+                <!-- <li><a routerLink="/contact" class="sidenav-links" (click)="sidenav.close()">Contact</a ></li> -->
             </ul>
         </div>
     </mat-sidenav>
@@ -25,17 +25,15 @@
             <a class="menu"  (click) = "sidenav.open()" >
                 <mat-icon> menu </mat-icon>
             </a>
-            <h3>Thelazydeveloper</h3>
+            <h2 > {{ '{' }}The Web Learner's Blog {{ '}' }}</h2>
             <span class="emptyspace"></span>
             <a routerLink="/" class ="links">Home</a>
             <a routerLink="/blog" class ="links">Blog</a>
             <a routerLink="/about" class ="links">About</a>
-            <a routerLink="/contact"class ="links">Contact</a>
+            <!-- <a routerLink="/contact"class ="links">Contact</a> -->
         </mat-toolbar>
         <div id="main">
              <router-outlet></router-outlet>
-             <!-- <app-viewpost> </app-viewpost> -->
-            <!-- <app-editor></app-editor> -->
         </div>
         <app-footer></app-footer>
     </mat-sidenav-content>

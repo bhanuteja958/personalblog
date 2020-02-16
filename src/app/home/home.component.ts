@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  recentUploads:any[];
+
+  constructor(private firebaseservice:FirebaseService) { }
 
   ngOnInit() {
+    this.firebaseservice.getRecentUploads().then((documentSnapShots)=>{
+      this.recentUploads = documentSnapShots.docs;
+    })
   }
 
 }
