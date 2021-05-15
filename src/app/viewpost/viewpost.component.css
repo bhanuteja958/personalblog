@@ -3,7 +3,7 @@
     margin:30px auto 0px auto;
 }
 :host ::ng-deep img{
-    max-width:70%
+    max-width:100%
 }
 :host ::ng-deep figure{
     text-align:center;

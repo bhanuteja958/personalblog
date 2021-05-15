@@ -34,3 +34,8 @@ h1{
     color:white;
     padding:10px;
 }
+@media(max-width:650px){
+    #postView{
+        width:80%;
+    }
+}

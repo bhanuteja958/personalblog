@@ -1,5 +1,5 @@
 mat-sidenav-container{
-    font-family: 'Roboto Slab', serif !important;
+    font-family: 'Roboto Slab', serif;
 }
 mat-sidenav{
     width:250px;
@@ -21,7 +21,8 @@ mat-toolbar{
     height:55px;
     box-shadow:3px -5px 10px 1px #000000;
     color:black;
-    font-family: 'Roboto Slab', serif !important;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
 }
 /* main navigation styling */
 .menu{

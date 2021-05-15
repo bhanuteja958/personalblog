@@ -25,6 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 import { ViewpostComponent } from './viewpost/viewpost.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAFPRXAiZkC92ok6d7_yRwVIGU0WH-OBcY",
@@ -33,10 +35,12 @@ var firebaseConfig = {
   projectId: "personalblog-4dd65",
   storageBucket: "personalblog-4dd65.appspot.com",
   messagingSenderId: "987671766762",
-  appId: "1:987671766762:web:8f97bdea405a1eafe31993"
+  appId: "1:987671766762:web:8f97bdea405a1eafe31993",
+  measurementId: "G-ZV7SP9SQ6N"
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
 
 @NgModule({
@@ -48,7 +52,9 @@ firebase.initializeApp(firebaseConfig);
     EditorComponent,
     BlogComponent,
     ViewpostComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

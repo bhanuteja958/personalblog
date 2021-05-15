@@ -1,5 +1,5 @@
 <div id="editor">
-    <form (ngSubmit)="onSubmit(firstName,content,category)">   
+    <form (ngSubmit)="onSubmit(firstName,content,category,myForm)" #myForm="ngForm">   
         <mat-form-field appearance = "fill" class="width">
             <mat-label>Title</mat-label>
             <input 

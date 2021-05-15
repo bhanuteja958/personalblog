@@ -4,10 +4,14 @@ mat-card{
 }
 mat-card-title{
     font-size:40px;
-    font-family: 'Roboto Slab', serif !important;
+    font-family: 'Roboto Slab', serif;
 }
 mat-card-content{
     font-size:20px;
-    font-family: 'Roboto Slab', serif !important;
+    font-family: 'Roboto Slab', serif;
 }
-
+@media(max-width:650px){
+    mat-card{
+        width:75%;
+    }
+}

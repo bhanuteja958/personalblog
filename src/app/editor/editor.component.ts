@@ -20,7 +20,7 @@ export class EditorComponent implements OnInit {
   };
   obj:any;
 
-  private editorConfig = {
+ editorConfig = {
       placeholder:"Enter text here ....",
       extraPlugins: [ this.imagePluginFactory ],
       removePlugins:['ImageCaption']
@@ -35,10 +35,11 @@ export class EditorComponent implements OnInit {
     };
   }
 
-  onSubmit(blogPostTitle,blogPostContent,blogPostCategory){
+  onSubmit(blogPostTitle,blogPostContent,blogPostCategory,myForm){
       this.blogPost.title = blogPostTitle.control.value;
       this.blogPost.content = blogPostContent.control.value;
       this.blogPost.category = blogPostCategory.control.value;
+      myForm.resetForm();
       this.firebaseService.addBlogPost(this.blogPost)
   }
 

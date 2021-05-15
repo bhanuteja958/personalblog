@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -9,7 +10,9 @@ import { FirebaseService } from '../services/firebase.service';
 export class BlogComponent implements OnInit {
 
   blogPosts:any[] ; 
-  constructor(public firebaseService:FirebaseService) { }
+  constructor( public firebaseService:FirebaseService,
+             ) 
+             { }
   disabledNext:boolean = false;
   disabledPrevious:boolean = true;
 
@@ -23,6 +26,7 @@ export class BlogComponent implements OnInit {
 
   loadPrevious(){
     this.firebaseService.previousPosts(this.blogPosts[0]).then((documentSnapShots)=>{
+      window.scrollTo(0,0);
       this.blogPosts=documentSnapShots.docs;
       this.getDoc('previous');
       this.getDoc('next');
